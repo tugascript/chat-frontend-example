@@ -27,7 +27,7 @@ export interface MemberChats_memberChats {
   createdAt: string;
   updatedAt: string;
   expiration: number;
-  invitation: string | null;
+  invitation: string;
   profilesCount: number;
   author: MemberChats_memberChats_author;
 }

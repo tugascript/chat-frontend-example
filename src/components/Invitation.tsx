@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useCreateProfileMutation } from "../redux/apis/profiles-api";
 import { useAppDispatch } from "../redux/hooks";
 import { setAlert } from "../redux/slices/alert-slice";
-import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -11,13 +10,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import LoginIcon from "@mui/icons-material/Login";
 
 interface IProps {
-  invitation: string;
-  anchorEl: HTMLElement | null;
   onClose: () => void;
+  invitation: string;
 }
 
-const Invitation: React.FC<IProps> = ({ invitation, anchorEl, onClose }) => {
-  const open = Boolean(anchorEl);
+const Invitation: React.FC<IProps> = ({ onClose, invitation }) => {
   const [createProfile, { data, isSuccess, isError, error, isUninitialized }] =
     useCreateProfileMutation();
   const navigate = useNavigate();
@@ -33,28 +30,11 @@ const Invitation: React.FC<IProps> = ({ invitation, anchorEl, onClose }) => {
           message: "Chat room no longer exists!",
         })
       );
-      onClose();
     }
-  }, [
-    open,
-    data,
-    isSuccess,
-    navigate,
-    dispatch,
-    isUninitialized,
-    error,
-    isError,
-    onClose,
-  ]);
+  }, [data, isSuccess, navigate, dispatch, isUninitialized, error, isError]);
 
   return (
-    <Menu
-      id={invitation}
-      aria-labelledby={`invitation-${invitation}`}
-      anchorEl={anchorEl}
-      open={open}
-      onClose={onClose}
-    >
+    <React.Fragment>
       <MenuItem onClick={onClose}>
         <ListItemIcon>
           <CloseIcon />
@@ -67,7 +47,7 @@ const Invitation: React.FC<IProps> = ({ invitation, anchorEl, onClose }) => {
         </ListItemIcon>
         <ListItemText>Join</ListItemText>
       </MenuItem>
-    </Menu>
+    </React.Fragment>
   );
 };
 

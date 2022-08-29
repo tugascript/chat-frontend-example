@@ -27,7 +27,7 @@ export interface ChatByInvitation_chatByInvitation {
   createdAt: string;
   updatedAt: string;
   expiration: number;
-  invitation: string | null;
+  invitation: string;
   profilesCount: number;
   isMember: boolean;
   author: ChatByInvitation_chatByInvitation_author;

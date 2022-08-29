@@ -26,7 +26,7 @@ export interface UpdateRejectedInvite_updateRejectedInvite_chat {
   createdAt: string;
   updatedAt: string;
   expiration: number;
-  invitation: string | null;
+  invitation: string;
   profilesCount: number;
   author: UpdateRejectedInvite_updateRejectedInvite_chat_author;
 }

@@ -231,7 +231,6 @@ export const gqlChatByInvitation = gql`
       expiration
       invitation
       profilesCount
-      isMember
       author {
         id
         username

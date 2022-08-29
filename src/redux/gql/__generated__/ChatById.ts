@@ -98,7 +98,7 @@ export interface ChatById_chatById {
   createdAt: string;
   updatedAt: string;
   expiration: number;
-  invitation: string | null;
+  invitation: string;
   profilesCount: number;
   author: ChatById_chatById_author;
   profiles: ChatById_chatById_profiles;

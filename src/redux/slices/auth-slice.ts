@@ -48,6 +48,14 @@ export const authSlice = createSlice({
             state.user = payload;
           }
         }
+      )
+      .addMatcher(
+        accountsApiEndpoints.updateAccountDescription.matchFulfilled,
+        (state, { payload }) => {
+          if (state.authenticated && state.user) {
+            state.user.description = payload.description;
+          }
+        }
       );
   },
 });

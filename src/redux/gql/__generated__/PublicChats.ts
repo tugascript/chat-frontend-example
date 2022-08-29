@@ -27,7 +27,7 @@ export interface PublicChats_publicChats_edges_node {
   createdAt: string;
   updatedAt: string;
   expiration: number;
-  invitation: string | null;
+  invitation: string;
   profilesCount: number;
   isMember: boolean;
   author: PublicChats_publicChats_edges_node_author;

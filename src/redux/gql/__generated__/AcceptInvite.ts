@@ -26,7 +26,7 @@ export interface AcceptInvite_acceptInvite_chat {
   createdAt: string;
   updatedAt: string;
   expiration: number;
-  invitation: string | null;
+  invitation: string;
   profilesCount: number;
   author: AcceptInvite_acceptInvite_chat_author;
 }

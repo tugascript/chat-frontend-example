@@ -4,7 +4,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate } from "react-router-dom";
-import { useRemoveChatMutation } from "../../../redux/apis/chats-api";
+import { useRemoveChatMutation } from "../../../../redux/apis/chats-api";
 
 interface IProps {
   chatId: string;

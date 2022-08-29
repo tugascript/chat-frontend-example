@@ -209,6 +209,7 @@ export const {
   useChatBySlugQuery,
   useLazyChatBySlugQuery,
   useLazyChatByInvitationQuery,
+  useChatByInvitationQuery,
   usePublicChatsQuery,
   useLazyPublicChatsQuery,
   useUserChatsQuery,

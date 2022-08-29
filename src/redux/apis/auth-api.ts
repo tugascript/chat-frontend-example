@@ -4,7 +4,11 @@ import type { ILogin } from "./interfaces/login-interface";
 import type { IMessage } from "./interfaces/message-interface";
 import type { IRegister } from "./interfaces/register-interface";
 import type { IConfirmLogin } from "./interfaces/confirm-login-interface";
-import { setAuthToken, setClientAuthorization } from "../gql/clients";
+import {
+  getAuthToken,
+  setAuthToken,
+  setClientAuthorization,
+} from "../gql/clients";
 import { IResetPassword } from "./interfaces/reset-password";
 
 const setAuthResponse = (response: IAuthResult) => {
@@ -63,6 +67,9 @@ export const authApi = createApi({
       query: () => ({
         url: "/logout",
         method: "POST",
+        headers: {
+          Authorization: `Bearer ${getAuthToken()}`,
+        },
       }),
     }),
     refreshAccess: builder.mutation<IAuthResult, void>({
@@ -97,6 +104,9 @@ export const authApi = createApi({
         url: "/update-email",
         method: "POST",
         body,
+        headers: {
+          Authorization: `Bearer ${getAuthToken()}`,
+        },
       }),
       transformResponse: setAuthResponse,
     }),
@@ -105,6 +115,9 @@ export const authApi = createApi({
         url: "/update-password",
         method: "POST",
         body,
+        headers: {
+          Authorization: `Bearer ${getAuthToken()}`,
+        },
       }),
       transformResponse: setAuthResponse,
     }),

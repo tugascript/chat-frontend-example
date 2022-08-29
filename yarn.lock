@@ -3533,6 +3533,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-copy-to-clipboard@npm:^5.0.4":
+  version: 5.0.4
+  resolution: "@types/react-copy-to-clipboard@npm:5.0.4"
+  dependencies:
+    "@types/react": "*"
+  checksum: c0fe51b79a393d4c1fa5f8a288793c03f791e0d979abaa6ae587de53b8e3bc1f05e3379e7539077a21c9d66c12c3fad3ab6684f836f2ba7a55b9589de8500738
+  languageName: node
+  linkType: hard
+
 "@types/react-dom@npm:^18.0.0, @types/react-dom@npm:^18.0.6":
   version: 18.0.6
   resolution: "@types/react-dom@npm:18.0.6"
@@ -5773,6 +5782,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"copy-to-clipboard@npm:^3.3.1":
+  version: 3.3.2
+  resolution: "copy-to-clipboard@npm:3.3.2"
+  dependencies:
+    toggle-selection: ^1.0.6
+  checksum: 968ec7ec3d0cf3067542b63dd244ba5d05e743899d7a0361fb0a3130e731d277f5ea54ea4d90fc88cc66eea2e4c67dc2dd8698e4ed360f921af5aa7c60b889ac
+  languageName: node
+  linkType: hard
+
 "core-js-compat@npm:^3.21.0, core-js-compat@npm:^3.22.1":
   version: 3.25.0
   resolution: "core-js-compat@npm:3.25.0"
@@ -6717,6 +6735,7 @@ __metadata:
     "@types/jest": ^27.5.2
     "@types/node": ^16.11.56
     "@types/react": ^18.0.17
+    "@types/react-copy-to-clipboard": ^5.0.4
     "@types/react-dom": ^18.0.6
     apollo: ^2.34.0
     dayjs: ^1.11.5
@@ -6724,6 +6743,8 @@ __metadata:
     graphql-request: ^5.0.0
     graphql-ws: ^5.10.1
     react: ^18.2.0
+    react-copy-to-clipboard: ^5.1.0
+    react-countdown: ^2.3.2
     react-dom: ^18.2.0
     react-infinite-scroll-component: ^6.1.0
     react-redux: ^8.0.2
@@ -12252,7 +12273,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -12414,6 +12435,30 @@ __metadata:
     regenerator-runtime: ^0.13.9
     whatwg-fetch: ^3.6.2
   checksum: 1bb031080af15397d6eb9c69a0c2e93799991f7197a086e4409ba719398f1256b542a3d6c9a34673d516c684eef3e8226c99b335982593851f58f65f6e43571b
+  languageName: node
+  linkType: hard
+
+"react-copy-to-clipboard@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "react-copy-to-clipboard@npm:5.1.0"
+  dependencies:
+    copy-to-clipboard: ^3.3.1
+    prop-types: ^15.8.1
+  peerDependencies:
+    react: ^15.3.0 || 16 || 17 || 18
+  checksum: f00a4551b9b63c944a041a6ab46af5ef20ba1106b3bc25173e7ef9bffbfba17a613368682ab8820cfe8d4b3acc5335cd9ce20229145bcc1e6aa8d1db04c512e5
+  languageName: node
+  linkType: hard
+
+"react-countdown@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "react-countdown@npm:2.3.2"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ">= 15"
+    react-dom: ">= 15"
+  checksum: 670d7f6f355cd2c862fde2039e3fbaf39dae2925d2dea78c0406c04a9a5c35cca61bbd137de04a965ebdbbbaee5d435a06f06c0786a86d7bfc175b4fd9789e19
   languageName: node
   linkType: hard
 
@@ -14303,6 +14348,13 @@ __metadata:
   dependencies:
     is-number: ^7.0.0
   checksum: f76fa01b3d5be85db6a2a143e24df9f60dd047d151062d0ba3df62953f2f697b16fe5dad9b0ac6191c7efc7b1d9dcaa4b768174b7b29da89d4428e64bc0a20ed
+  languageName: node
+  linkType: hard
+
+"toggle-selection@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "toggle-selection@npm:1.0.6"
+  checksum: a90dc80ed1e7b18db8f4e16e86a5574f87632dc729cfc07d9ea3ced50021ad42bb4e08f22c0913e0b98e3837b0b717e0a51613c65f30418e21eb99da6556a74c
   languageName: node
   linkType: hard
 

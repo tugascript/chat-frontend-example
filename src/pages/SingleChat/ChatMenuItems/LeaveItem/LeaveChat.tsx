@@ -3,7 +3,7 @@ import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { useLeaveChatMutation } from "../../../redux/apis/profiles-api";
+import { useLeaveChatMutation } from "../../../../redux/apis/profiles-api";
 import { useNavigate } from "react-router-dom";
 
 interface IProps {

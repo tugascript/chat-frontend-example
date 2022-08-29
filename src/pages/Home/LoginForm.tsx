@@ -1,6 +1,8 @@
 import { FormikHelpers } from "formik";
 import React from "react";
 import * as Yup from "yup";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
 import AppForm from "../../components/forms/AppForm";
 import AppFormField from "../../components/forms/AppFormField";
 import AppSubmitButton from "../../components/forms/AppSubmitButton";
@@ -8,6 +10,8 @@ import { useLoginMutation } from "../../redux/apis/auth-api";
 import { ILogin } from "../../redux/apis/interfaces/login-interface";
 import { useAppDispatch } from "../../redux/hooks";
 import { setAlert } from "../../redux/slices/alert-slice";
+import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -79,6 +83,34 @@ const LoginForm: React.FC = () => {
         text="Login"
         loading={isLoading}
       />
+      <Grid item xs={12}>
+        <Button
+          size="large"
+          fullWidth
+          variant="outlined"
+          disableElevation
+          color="info"
+          href="/altair"
+          target="_blank"
+          sx={{
+            borderWidth: 2,
+            "&: hover": {
+              borderWidth: 2,
+            },
+          }}
+        >
+          Go To API
+        </Button>
+        <Typography>
+          Forgot password?{" "}
+          <Link
+            style={{ textDecoration: "none", color: "#679E63" }}
+            to="/reset-password"
+          >
+            Reset
+          </Link>
+        </Typography>
+      </Grid>
     </AppForm>
   );
 };

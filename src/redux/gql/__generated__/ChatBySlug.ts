@@ -98,7 +98,7 @@ export interface ChatBySlug_chatBySlug {
   createdAt: string;
   updatedAt: string;
   expiration: number;
-  invitation: string | null;
+  invitation: string;
   profilesCount: number;
   author: ChatBySlug_chatBySlug_author;
   profiles: ChatBySlug_chatBySlug_profiles;

@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Router from "./pages/Router";
+import { useLazyMeQuery } from "./redux/apis/accounts-api";
+import { useRefreshAccessMutation } from "./redux/apis/auth-api";
+import { useAppSelector } from "./redux/hooks";
+import { selectAuth } from "./redux/slices/auth-slice";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+let interval: NodeJS.Timer | null = null;
+
+const App: React.FC = () => {
+  const [refresh, { isError, isSuccess, isLoading }] =
+    useRefreshAccessMutation();
+  const [me] = useLazyMeQuery();
+  const auth = useAppSelector(selectAuth);
+
+  React.useEffect(() => {
+    if (!isLoading) {
+      if (!auth.authenticated && !isError) {
+        refresh();
+      }
+
+      if (auth.authenticated) {
+        if (auth.user) {
+          if (!interval) {
+            interval = setInterval(() => {
+              refresh();
+            }, Math.floor(1000 * 60 * 9.75));
+          } else if (isError) {
+            clearInterval(interval);
+            interval = null;
+          }
+        } else {
+          me();
+        }
+      }
+    }
+  }, [isLoading, isError, isSuccess, auth, refresh, me]);
+
+  return <Router />;
+};
 
 export default App;
